@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities & Events - Stanton University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header id="main-header" class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-text">STANTON UNIVERSITY</div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-icon"></span>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Admissions ▼</a>
+                <a href="#" class="nav-link">Academics ▼</a>
+                <a href="#" class="nav-link">Student Services ▼</a>
+                <a href="#" class="nav-link">About ▼</a>
+                <a href="#" class="nav-link">Athletics</a>
+                <a href="#" class="nav-link">Contact Us</a>
+                <a href="#" class="nav-link">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="banner-slider" id="bannerSlider">
+            <!-- Banner images will be added dynamically by JavaScript -->
+        </div>
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h1 class="banner-title">Activities & Events</h1>
+                <p class="banner-subtitle">Discover exciting opportunities to engage, learn, and connect at Stanton University</p>
+            </div>
+        </div>
+        
+        <!-- Banner Indicators -->
+        <div class="banner-indicators" id="bannerIndicators"></div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search events...">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="events-section" id="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">⭐</div>
+                <div>
+                    <h2 class="section-title">Featured Events</h2>
+                    <p class="section-description">Don't miss these highlighted events</p>
+                </div>
+            </div>
+            <div class="events-grid" id="featuredEventsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section section-alt" id="upcoming-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">📅</div>
+                <div>
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <p class="section-description">Mark your calendar</p>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" data-section="upcoming">‹</button>
+                <div class="events-grid carousel-grid" id="upcomingEventsGrid"></div>
+                <button class="carousel-btn carousel-btn-next" data-section="upcoming">›</button>
+            </div>
+            <div class="pagination-dots" id="upcomingPagination"></div>
+        </div>
+    </section>
+
+    <!-- Student Activities Section -->
+    <section class="events-section" id="student-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">👥</div>
+                <div>
+                    <h2 class="section-title">Student Activities</h2>
+                    <p class="section-description">For students, by students</p>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" data-section="student">‹</button>
+                <div class="events-grid carousel-grid" id="studentEventsGrid"></div>
+                <button class="carousel-btn carousel-btn-next" data-section="student">›</button>
+            </div>
+            <div class="pagination-dots" id="studentPagination"></div>
+        </div>
+    </section>
+
+    <!-- Academic & Career Events Section -->
+    <section class="events-section section-alt" id="academic-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">🎓</div>
+                <div>
+                    <h2 class="section-title">Academic & Career Events</h2>
+                    <p class="section-description">Professional development opportunities</p>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" data-section="academic">‹</button>
+                <div class="events-grid carousel-grid" id="academicEventsGrid"></div>
+                <button class="carousel-btn carousel-btn-next" data-section="academic">›</button>
+            </div>
+            <div class="pagination-dots" id="academicPagination"></div>
+        </div>
+    </section>
+
+    <!-- Past Events Gallery -->
+    <section class="events-section" id="past-events-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon">📷</div>
+                <div>
+                    <h2 class="section-title">Past Events Gallery</h2>
+                    <p class="section-description">Relive memorable moments</p>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn carousel-btn-prev" data-section="past">‹</button>
+                <div class="gallery-grid" id="pastEventsGrid"></div>
+                <button class="carousel-btn carousel-btn-next" data-section="past">›</button>
+            </div>
+            <div class="pagination-dots" id="pastPagination"></div>
+        </div>
+    </section>
+
+    <!-- How to Participate Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-icon">❓</div>
+                <div>
+                    <h2 class="section-title">How to Participate</h2>
+                    <p class="section-description">Join us in creating memorable experiences</p>
+                </div>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Browse Events</h3>
+                    <p class="step-text">Explore our diverse range of activities and events throughout the academic year.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Register Online</h3>
+                    <p class="step-text">Click on any event to view details and complete the simple online registration form.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Attend & Engage</h3>
+                    <p class="step-text">Show up, participate actively, and make lasting connections with the Stanton community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Around Section -->
+    <section class="info-section section-alt">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Getting Around</h2>
+                <p class="section-description">Explore nearby attractions during your free time</p>
+            </div>
+            <div class="getting-around-grid">
+                <div class="location-card" data-type="museums">
+                    <div class="location-icon">🏛️</div>
+                    <h3 class="location-title">Museums</h3>
+                    <p class="location-text">Discover art, history, and culture at nearby museums</p>
+                    <button class="btn-secondary" onclick="openMuseumModal()">View Museums</button>
+                </div>
+                <div class="location-card" data-type="libraries">
+                    <div class="location-icon">📚</div>
+                    <h3 class="location-title">Libraries</h3>
+                    <p class="location-text">Access extensive resources at local libraries</p>
+                    <button class="btn-secondary" onclick="openLibraryModal()">View Libraries</button>
+                </div>
+                <div class="location-card" data-type="parks">
+                    <div class="location-icon">🌳</div>
+                    <h3 class="location-title">Parks & Recreation</h3>
+                    <p class="location-text">Enjoy outdoor activities at beautiful parks</p>
+                    <button class="btn-secondary" onclick="openParksModal()">View Parks</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">STANTON UNIVERSITY</div>
+            
+            <div class="footer-grid">
+                <div class="footer-campus">
+                    <h3 class="footer-heading">Anaheim (Main Campus)</h3>
+                    <div class="footer-info">
+                        <p>📍 888 Disneyland Dr.<br>Suite: 400<br>Anaheim, California 92802</p>
+                        <p>📞 <a href="tel:714-539-6561">714-539-6561</a></p>
+                        <p>✉️ <a href="mailto:info@stanton.edu">info@stanton.edu</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-campus">
+                    <h3 class="footer-heading">Los Angeles (Satellite Campus)</h3>
+                    <div class="footer-info">
+                        <p>📍 5700 Wilshire Blvd.<br>Suite: 120<br>Los Angeles, California 90036</p>
+                        <p>📞 <span class="unavailable">(currently unavailable)</span></p>
+                        <p>✉️ <a href="mailto:info@stanton.edu">info@stanton.edu</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Stanton University. All Rights Reserved.</p>
+                <a href="https://facebook.com" target="_blank" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-backdrop" onclick="closeEventModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEventModal()">×</button>
+            <div id="eventModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-backdrop" onclick="closeRegistrationModal()"></div>
+        <div class="modal-content">
+            <div id="registrationModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Museums Modal -->
+    <div id="museumsModal" class="modal">
+        <div class="modal-backdrop" onclick="closeMuseumModal()"></div>
+        <div class="modal-content location-modal-content">
+            <button class="modal-close" onclick="closeMuseumModal()">×</button>
+            <div class="location-modal-header">
+                <h2>🏛️ Museums Near Stanton University</h2>
+            </div>
+            <div id="museumsContent" class="location-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Libraries Modal -->
+    <div id="librariesModal" class="modal">
+        <div class="modal-backdrop" onclick="closeLibraryModal()"></div>
+        <div class="modal-content location-modal-content">
+            <button class="modal-close" onclick="closeLibraryModal()">×</button>
+            <div class="location-modal-header">
+                <h2>📚 Libraries Near Stanton University</h2>
+            </div>
+            <div id="librariesContent" class="location-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Parks Modal -->
+    <div id="parksModal" class="modal">
+        <div class="modal-backdrop" onclick="closeParksModal()"></div>
+        <div class="modal-content location-modal-content">
+            <button class="modal-close" onclick="closeParksModal()">×</button>
+            <div class="location-modal-header">
+                <h2>🌳 Parks & Recreation Near Stanton University</h2>
+            </div>
+            <div id="parksContent" class="location-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-backdrop" onclick="closeGalleryModal()"></div>
+        <div class="modal-content gallery-modal-content">
+            <button class="modal-close" onclick="closeGalleryModal()">×</button>
+            <button class="gallery-nav gallery-nav-prev" onclick="navigateGallery(-1)">‹</button>
+            <div id="galleryContent"></div>
+            <button class="gallery-nav gallery-nav-next" onclick="navigateGallery(1)">›</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
